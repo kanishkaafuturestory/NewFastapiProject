@@ -6,7 +6,7 @@ const HistoryTable = ({ refresh }) => {
 
   const fetchHistory = async () => {
     try {
-      const res = await api.get('/history?limit=5');
+      const res = await api.get('/api/history?limit=5');
       setHistory(res.data);
     } catch (err) {
       console.error('Error fetching history:', err);

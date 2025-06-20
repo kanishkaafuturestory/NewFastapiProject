@@ -10,7 +10,7 @@ const PalindromeForm = ({ onResult }) => {
     setLoading(true);
     setError('');
     try {
-      const res = await api.post('/palindrome', { text: input });
+      const res = await api.post('/api/palindrome', { text: input });
       onResult(res.data);  // pass result up to App.jsx
       setInput('');
     } catch (err) {
