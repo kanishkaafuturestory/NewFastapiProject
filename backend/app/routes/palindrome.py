@@ -26,8 +26,10 @@ async def check_palindrome(payload: CheckInput):
     try:
         await db.checks.insert_one(record)
         return { "input": text, "isPalindrome": is_palindrome }
-    except:
+    except Exception as e:
+        print("❌ ERROR inserting into DB:", e)
         raise HTTPException(status_code=500, detail="DB insert failed")
+
 
 
 @router.get("/history")
